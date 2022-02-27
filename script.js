@@ -45,9 +45,9 @@ questions.forEach((currentQuestion, questionNumber) => {
 		);
 	}
 	output.push(
-		`<div class="slide">
+		`<div class="slide flex-col flex-center">
         <div class="question"> ${currentQuestion.question} </div>
-        <div class="answers"> ${answers.join("")} </div>
+        <div class="answers flex-col flex-center"> ${answers.join("")} </div>
     </div>`
 	);
 });
