@@ -1,122 +1,139 @@
-:root{
-  --primary:#f8fafc;
-  --secondary:#93c5fd;
-  --correct:#d9f99d;
-  --wrong:#fecdd3;
-  --options:#dbeafe;
+:root {
+	--primary: #edf7f6;
+	--secondary: #b7d8fe;
+	--correct: #d9f99d;
+	--wrong: #fecdd3;
+	--options: #dbeafe;
 }
 
-body{
+body {
 	font-size: 1.5rem;
 	font-family: sans-serif;
 	color: #333;
-  text-align: center;
-  background-color: var(--primary);
-  display:flex;
-  justify-content:center;
-  align-items: center;
+	background-color: var(--primary);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.container{
-  border-radius:5%;
-  border:solid 1px #ccc;
-  padding:2%;
-  margin:auto;
-  width:80vw;
-  height:80vh;
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+.container {
+	min-height: 50vh;
+	min-width: 50vw;
+	border-radius: 1.5rem;
+	border: solid 1px #ccc;
+	background-color: #fbfdfd;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-h1{
-  margin: 0.5rem auto;
-  padding: 0.5rem;
-  font-size: 2rem;
-  background-color: var(--secondary);
-  text-align:center;
-  position:relative;
+.header {
+	display: flex;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0.5rem 1.5rem;
+	font-size: 2rem;
+	background-color: var(--secondary);
+	font-weight: bolder;
+	border-bottom: 1px solid #ccc;
+	border-radius: 1.5rem 1.5rem 0 0;
 }
 
-.question{
-  font-size: 1.5rem;
-  margin: 0.5em;
-  padding: 0.5rem;
+.quiz {
+	display: block;
+	padding: 2rem;
+	position: relative;
+}
+
+.slide {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.question {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin: 0.5em;
+	padding: 0.5rem;
+	text-align: center;
 }
 
 .answers {
-  text-align: left;
-  display: inline-block;
-  margin: 0.2rem 0;
+	text-align: left;
+	margin: 0.2rem 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
-.answers label:hover{
-  background-color: var(--secondary);
+.answers label:hover {
+	background-color: var(--secondary);
 }
-input[type=radio]:checked + label{
-  background-color: var(--secondary) !important;
+input[type="radio"]:checked + label {
+	background-color: var(--secondary) !important;
 }
-.answers label input{
-  display:none;
+.answers label input {
+	display: none;
 }
-.answers label{
-  display: block;
-  background:var(--options);
-  border-radius:5%;
-  padding:0.5rem;
-  margin:0.5rem;
+.answers label {
+	background: var(--options);
+	border-radius: 20px;
+	padding: 1rem;
+	margin: 0.5rem;
 	cursor: pointer;
-  font-size:1rem;
+	font-size: 1rem;
+	width: 12rem;
+	word-wrap: wrap;
 }
 
-button{
-  border-radius:5%;
-  border:none;
+button {
+	border-radius: 0.5rem;
+	border: none;
 	font-size: 1rem;
-	background-color: var(--options);
+	background-color: var(--primary);
+	border: 1px solid #ccc;
 	padding: 1rem;
 	cursor: pointer;
 	margin-bottom: 0.5rem;
 }
-button:hover{
-	background-color: var(--secondary);;
-  transition: background-color 0.5s;
+button:hover {
+	background-color: var(--secondary);
+	transition: background-color 0.5s;
 }
 
-.slide{
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.5s;
+.slide {
+	z-index: 1;
+	display: none;
+	transition: display 0.5s;
 }
-.active-slide{
-  opacity: 1;
-  z-index: 2;
+.active-slide {
+	display: block;
+	z-index: 2;
 }
 
-/* .quiz-container{
-  position:relative;
-  display:block;
+.navigation {
+	display: flex;
+	justify-content: center;
+	margin: 2rem 0;
 }
 
-.navigation{
-  position:relative;
-  display:block;
+.navigation button {
+	margin: 0 1rem;
 }
-.result{
-  display:block;
-} */
 
-.red{
-  background-color:var(--wrong) !important;
+#results {
+	text-align: center;
+	font-size: 1.2rem;
+	padding: 1rem 0 2rem 0;
 }
-.green{
-  background-color:var(--correct) !important;
+
+.red {
+	background-color: var(--wrong) !important;
 }
-.checked{
-  background-color: var(--secondary) !important;
+.green {
+	background-color: var(--correct) !important;
+}
+.checked {
+	background-color: var(--secondary) !important;
 }
